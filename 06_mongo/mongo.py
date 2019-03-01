@@ -12,27 +12,27 @@ collection = db.restaurants
 def find_borough(borough):
     bors = []
     for doc in collection.find({"borough" : borough}):
-        ret.append(doc)
+        bors.append(doc)
     return bors
 
 def find_zip(zip_code):
     zips = []
     for doc in collection.find({"address.zipcode" : zip_code}):
-        ret.append(doc)
+        zips.append(doc)
     return zip
 
 def find_zip_grade(zip_code, grade):
 
     zips= []
     for doc in collection.find({"address.zipcode" : zip_code, "grades.0.grade" : grade}):
-        ret.append(doc)
+        zips.append(doc)
     return zips
 
 def find_zip_score(zip_code, score):
 
     zips = []
     for doc in collection.find({"address.zipcode" : zip_code, "grades.0.score" : {'$lt': score}}):
-        ret.append(doc)
+        zips.append(doc)
     return zips
 
 
