@@ -5,13 +5,16 @@ K07 -- Import/Export Bank
 2019-03-06
 '''
 
-import pymongo
+from pymongo import MongoClient
+import json
+
 from pprint import pprint
 
 SERVER_ADDR="46.101.242.188"
-connection=pymongo.MongoClient(SERVER_ADDR)
-db=connection.pokedex
-print(connection.test_database)
+client=MongoClient(SERVER_ADDR,27017)
+db=client.mongolia
+collection=db.pokedex
+print(client.test_database)
 print(db.list_collection_names())
 
 '''
