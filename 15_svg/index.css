@@ -1,0 +1,15 @@
+
+.chart circle {
+    fill: black;
+}
+.chart text {
+  fill: black;
+  font: 12px sans-serif;
+  text-anchor: end;
+}
+
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: black;
+    fill: npne;
+}
