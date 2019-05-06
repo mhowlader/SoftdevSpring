@@ -1,3 +1,8 @@
+# Mohtasim Howlader
+# SoftDev1 pd8
+# K23 -- Memoize With Closure
+# 2019-05-02
+
 import random
 
 
@@ -12,15 +17,6 @@ def greet():
     greetings=["hello",'welcome','ayo','bonjour','word up']
     return random.choice(greetings)
 
-
-def fib(n):
-    if n==0:
-        return 0
-    elif n==1:
-        return 1
-    else:
-        return fib(n-1) + fib(n-2)
-
 def memoize(f):
     memo ={}
     def helper(x):
@@ -30,6 +26,15 @@ def memoize(f):
         return memo[x]
     return helper
 
-fibcalc = memoize(fib)
+@memoize
+def fib(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
 
-print(fibcalc(5))
+
+
+print(fib(5))
